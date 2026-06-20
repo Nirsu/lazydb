@@ -1,5 +1,6 @@
-import 'package:lazydb/lazydb.dart' as lazydb;
+import 'package:lazydb/connections/screens/connections_screens.dart';
+import 'package:nocterm/nocterm.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${lazydb.calculate()}!');
+void main() {
+  runApp(ConnectionsScreens());
 }
