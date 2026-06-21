@@ -7,7 +7,7 @@ const logoASCII = r'''
 ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═════╝ ╚═════╝
 ''';
 
-// This is use to match panels to the ASCII logo by using the longest rendered line.
+// Get the width of the ASCII logo by using the longest rendered line.
 final logoWidth = logoASCII
     .trim()
     .split('\n')

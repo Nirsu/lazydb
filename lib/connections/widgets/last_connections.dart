@@ -1,7 +1,7 @@
 import 'package:lazydb/shared/constant.dart';
 import 'package:nocterm/nocterm.dart';
 
-class LastConnections extends StatefulComponent {
+class LastConnections extends StatelessComponent {
   const LastConnections({
     super.key,
     required this.connections,
@@ -11,11 +11,6 @@ class LastConnections extends StatefulComponent {
   final List<String> connections;
   final int? selectedIndex;
 
-  @override
-  State<LastConnections> createState() => _LastConnectionsState();
-}
-
-class _LastConnectionsState extends State<LastConnections> {
   @override
   Component build(BuildContext context) {
     return Container(
@@ -27,16 +22,14 @@ class _LastConnectionsState extends State<LastConnections> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          for (var index = 0; index < component.connections.length; index++)
+          for (var index = 0; index < connections.length; index++)
             Container(
               width: double.infinity,
-              color: component.selectedIndex == index ? Colors.white : null,
+              color: selectedIndex == index ? Colors.white : null,
               child: Text(
-                component.connections[index],
+                connections[index],
                 style: TextStyle(
-                  color: component.selectedIndex == index
-                      ? Colors.black
-                      : Colors.white,
+                  color: selectedIndex == index ? Colors.black : Colors.white,
                 ),
               ),
             ),
